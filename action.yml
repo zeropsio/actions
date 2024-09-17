@@ -1,24 +1,22 @@
-name: 'Zerops Actions'
-description: 'Provide a description here'
-author: 'Your name or organization here'
-
-# Add your action's branding here. This will appear on the GitHub Marketplace.
-branding:
-  icon: 'heart'
-  color: 'red'
-
-# Define your inputs here.
-inputs:
-  milliseconds:
-    description: 'Your input description here'
-    required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
-
+name: 'Deploy to Zerops'
+description: 'GitHub Action for deploying projects to Zerops.'
+author: 'zeropsio'
 runs:
-  using: node20
-  main: dist/index.js
+  using: 'node20'
+  main: 'dist/index.js'
+
+inputs:
+  service-id:
+    description: 'The service ID'
+    required: true
+  access-token:
+    description: 'The access token'
+    required: true
+
+outputs:
+  success-message:
+    description: 'Message indicating a successful deployment'
+
+branding:
+  icon: 'server'
+  color: 'blue'
