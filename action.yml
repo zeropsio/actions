@@ -1,5 +1,5 @@
-name: 'Deploy to Zerops'
-description: 'GitHub Action for deploying projects to Zerops.'
+name: 'Zerops Actions'
+description: 'Actions for Seamless Deployments to Zerops.'
 author: 'zeropsio'
 runs:
   using: 'node20'
@@ -15,8 +15,8 @@ inputs:
 
 outputs:
   success-message:
-    description: 'Message indicating a successful deployment'
+    description: 'successful deployment'
 
 branding:
-  icon: 'server'
-  color: 'blue'
+  icon: "upload-cloud"
+  color: "green"

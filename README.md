@@ -1,4 +1,4 @@
-# Zerops Actions
+# ⚡️ Zerops Actions
 
 ```yml
 name: Deploy with Zerops
