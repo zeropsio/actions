@@ -51,9 +51,8 @@ The service ID is used to identify your Zerops service. Although it's less sensi
 Store the Zerops token and service ID as secrets in your GitHub repository:
 
 - Go to your repository on GitHub.
-- Navigate to Settings > Secrets and variables > Actions > Repository secrets.
+- Navigate to Settings > Secrets and variables > Actions > Repository secrets (`https://github.com/${username}/${repository}/settings/secrets/actions`).
 - Add the following secrets:
   - `ZEROPS_TOKEN` with your Zerops access token.
   - `ZEROPS_SERVICE_ID` with your Zerops service ID.
 
-`https://github.com/${username}/${repository}/settings/secrets/actions`
