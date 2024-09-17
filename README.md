@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy with Zerops
-        uses: zeropsio/actions@master
+        uses: zeropsio/actions@main
         with:
           access-token: ${{ secrets.ZEROPS_TOKEN }}
           service-id: ${{ secrets.ZEROPS_SERVICE_ID }}
