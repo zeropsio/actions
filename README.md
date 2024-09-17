@@ -1,14 +1,12 @@
 # ⚡️ Zerops Actions
 
-A Github Action for zerops deployment workflow for your project if you are a
-github workflows addict.
+A GitHub Action for streamlining Zerops deployment workflows in your projects.
 
 ## Usage
 
-To set up the Zerops deployment workflow, use the following GitHub Actions YAML
-configuration in `.github/workflows/deploy.yml`:
+To implement the Zerops deployment workflow, add the following GitHub Actions configuration to `.github/workflows/deploy.yml` and modify it to fit your use case:
 
-```yml
+```yaml
 name: Deploy with Zerops
 
 on:
@@ -28,39 +26,31 @@ jobs:
         uses: zeropsio/actions@main
         with:
           access-token: ${{ secrets.ZEROPS_TOKEN }}
-          service-id: ${{ secrets.ZEROPS_SERVICE_ID }}
+          service-id: EjmDVbL0QMuemLJ2hSO6zw # Replace it wit your own Service ID
 ```
 
-### Setting up Environment Variables
+## Environment Setup
 
-#### Generate a Zerops Token
+### Zerops Token Generation
 
-A personal access token is required to authorize your Zerops CLI. Keep this
-token private as it grants admin permissions.
+A personal access token is required to authenticate the Zerops CLI. This token has admin privileges, so handle it with care.
 
-- Open
-  [Settings > Access Token Management](https://app.zerops.io/settings/token-management)
-  in the Zerops app
-- Generate a new access token.
+1. Navigate to [Settings > Access Token Management](https://app.zerops.io/settings/token-management) in the Zerops application.
+2. Generate a new access token.
 
-Now we need a service id and dont worry nothing happens if this gets leaked
+### Retrieving the Service ID
 
-#### Get your Service ID
+The service ID is used to identify your Zerops service.
 
-The service ID is used to identify your Zerops service. Although it's less
-sensitive than the access token, keep it secure.
+1. Access your service dashboard at `https://app.zerops.io/service-stack/<your-service-id>/dashboard`.
+2. The service ID is the alphanumeric string in the URL (e.g., `EjmDVbL0QMuemLJ2hSO6zw`).
 
-- Visit your service dashboard at
-  `https://app.zerops.io/service-stack/EjmDVbL0QMuemLJ2hSO6zw/dashboard`.
-- `EjmDVbL0QMuemLJ2hSO6zw` is your service ID.
-
-#### Add Secrets to Your Repository
+### Configuring Repository Secrets
 
 Store the Zerops token and service ID as secrets in your GitHub repository:
 
-- Go to your repository on GitHub.
-- Navigate to Settings > Secrets and variables > Actions > Repository secrets
-  (`https://github.com/${username}/${repository}/settings/secrets/actions`).
-- Add the following secrets:
-  - `ZEROPS_TOKEN` with your Zerops access token.
-  - `ZEROPS_SERVICE_ID` with your Zerops service ID.
+1. Go to your GitHub repository.
+2. Navigate to Settings > Secrets and variables > Actions > Repository secrets.
+3. Add the following secrets:
+   - `ZEROPS_TOKEN`: Your Zerops access token
+   - `ZEROPS_SERVICE_ID`: Your Zerops service ID
