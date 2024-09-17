@@ -1,33 +1,9 @@
 #!/bin/bash
 
-# Exit early
-# See: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#The-Set-Builtin
 set -e
 
-# About:
-#
-# This is a helper script to tag and push a new release. GitHub Actions use
-# release tags to allow users to select a specific version of the action to use.
-#
-# See: https://github.com/actions/typescript-action#publishing-a-new-release
-# See: https://github.com/actions/toolkit/blob/master/docs/action-versioning.md#recommendations
-#
-# This script will do the following:
-#
-# 1. Retrieve the latest release tag
-# 2. Display the latest release tag
-# 3. Prompt the user for a new release tag
-# 4. Validate the new release tag
-# 5. Remind user to update the version field in package.json
-# 6. Tag a new release
-# 7. Set 'is_major_release' variable
-# 8. Point separate major release tag (e.g. v1, v2) to the new release
-# 9. Push the new tags (with commits, if any) to remote
-# 10. If this is a major release, create a 'releases/v#' branch and push
-#
 # Usage:
-#
-# script/release
+# ./script/release
 
 # Variables
 semver_tag_regex='v[0-9]+\.[0-9]+\.[0-9]+$'
