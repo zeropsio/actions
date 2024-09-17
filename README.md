@@ -4,7 +4,9 @@ A GitHub Action for streamlining Zerops deployment workflows in your projects.
 
 ## Usage
 
-To implement the Zerops deployment workflow, add the following GitHub Actions configuration to `.github/workflows/deploy.yml` and modify it to fit your use case:
+To implement the Zerops deployment workflow, add the following GitHub Actions
+configuration to `.github/workflows/deploy.yml` and modify it to fit your use
+case:
 
 ```yaml
 name: Deploy with Zerops
@@ -33,17 +35,22 @@ jobs:
 
 ### Zerops Token Generation
 
-A personal access token is required to authenticate the Zerops CLI. This token has admin privileges, so handle it with care.
+A personal access token is required to authenticate the Zerops CLI. This token
+has admin privileges, so handle it with care.
 
-1. Navigate to [Settings > Access Token Management](https://app.zerops.io/settings/token-management) in the Zerops application.
+1. Navigate to
+   [Settings > Access Token Management](https://app.zerops.io/settings/token-management)
+   in the Zerops application.
 2. Generate a new access token.
 
 ### Retrieving the Service ID
 
 The service ID is used to identify your Zerops service.
 
-1. Access your service dashboard at `https://app.zerops.io/service-stack/<your-service-id>/dashboard`.
-2. The service ID is the alphanumeric string in the URL (e.g., `EjmDVbL0QMuemLJ2hSO6zw`).
+1. Access your service dashboard at
+   `https://app.zerops.io/service-stack/<your-service-id>/dashboard`.
+2. The service ID is the alphanumeric string in the URL (e.g.,
+   `EjmDVbL0QMuemLJ2hSO6zw`).
 
 ### Configuring Repository Secrets
 
