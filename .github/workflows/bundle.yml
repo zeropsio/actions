@@ -1,5 +1,5 @@
 name: I Bundle Zerops Actions
-    
+
 on:
   push:
     branches:
@@ -9,29 +9,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-      
-    - name: Install dependencies
-      run: npm install
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Bundles
-      run: npm run bundle
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-    - name: Configure Git
-      run: |
-        git config --global user.name "zerops-gh"
-        git config --global user.email "zerops.gh@gmail.com"
+      - name: Install dependencies
+        run: npm install
 
-    - name: Commit and push changes
-      run: |
-        git add .
-        git commit -m "chore: bundle + format"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Bundles
+        run: npm run bundle
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "zerops-gh"
+          git config --global user.email "zerops.gh@gmail.com"
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "chore: bundle + format"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,8 +7,8 @@ async function run() {
     const serviceId = core.getInput('service-id', { required: true })
     const accessToken = core.getInput('access-token', { required: true })
 
-    const zcliPath = "/usr/local/bin/zcli"
-    const zcliCacheKey = "zcli-linux-amd64-cache"
+    const zcliPath = '/usr/local/bin/zcli'
+    const zcliCacheKey = 'zcli-linux-amd64-cache'
 
     const cacheKey = await cache.restoreCache([zcliPath], zcliCacheKey)
     if (cacheKey) {
