@@ -1,10 +1,9 @@
 name: I Bundle Zerops Actions
-
+    
 on:
   push:
     branches:
       - main
-
 jobs:
   optimize:
     runs-on: ubuntu-latest
@@ -24,10 +23,15 @@ jobs:
     - name: Bundles
       run: npm run bundle
 
+    - name: Configure Git
+      run: |
+        git config --global user.name "zerops-gh"
+        git config --global user.email "zerops.gh@gmail.com"
+
     - name: Commit and push changes
       run: |
         git add .
-        git commit -m "chore: bundle + format" || echo "No changes to commit"
+        git commit -m "chore: bundle + format"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
