@@ -15,7 +15,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '20'
       
     - name: Install dependencies
       run: npm install
@@ -31,7 +31,7 @@ jobs:
     - name: Commit and push changes
       run: |
         git add .
-        git commit -m "chore: bundle"
+        git commit -m "chore: bundle + format"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
